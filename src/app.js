@@ -1,12 +1,20 @@
-const greeting = 'Hello World';
-console.log(greeting);
+import {http} from './http';
+import {ui} from './ui';
 
-const getData = async (url) => {
-  const response = await fetch(url);
-  const result = await response.json();
-  console.log(result);
-};
 
-getData('https://jsonplaceholder.typicode.com/posts/');
+console.log('hello');
+
+function getPosts() {
+  http.get('https://my-json-server.typicode.com/sicmusic/microposts/posts')
+    .then((data) => {
+      
+      ui.showPosts(data);
+
+    })
+    .catch(err => console.log(err));
+}
+
+getPosts();
+
 
 
