@@ -1,19 +1,19 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "hello"
+      "title": "Post 1",
+      "body": "This is post 1",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "goodbye"
+      "title": "Post Two",
+      "body": "This is post two\n",
+      "id": 2
     },
     {
-      "id": 3,
-      "title": "goodmorning"
+      "title": "Post Three",
+      "body": "This is post three",
+      "id": 3
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

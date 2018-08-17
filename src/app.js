@@ -14,6 +14,17 @@ function getPosts() {
     .catch(err => console.log(err));
 }
 
+function submitPost(){
+
+  const post = {
+    title: this.title.value,
+    body: this.body.value,
+    id:  
+  }
+
+  http.post(post);
+}
+
 getPosts();
 
 
