@@ -14,15 +14,13 @@ function getPosts() {
     .catch(err => console.log(err));
 }
 
-function submitPost(){
+function submitPost(post){
 
   const post = {
     title: this.title.value,
     body: this.body.value,
-    id:  
-  }
+    id: 
 
-  http.post(post);
 }
 
 getPosts();

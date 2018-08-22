@@ -8,7 +8,7 @@ class UI {
 
     let output = '';
     posts.forEach(post => {
-      output += `<div>My id is:${post.title} my title is: ${post.body}<div>`
+      output += `<div>My id is:${post.id} my title is: ${post.title} my body is ${post.body}<div>`
     });
 
     this.posts.innerHTML = output;
