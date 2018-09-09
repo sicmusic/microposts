@@ -28,7 +28,6 @@ class EasyHTTP {
 
     const resData = await response.json();
     return resData;
-   
   }
 
    // Make an HTTP PUT Request
