@@ -5,11 +5,16 @@ import {ui} from './ui';
 document.addEventListener("DOMContentLoaded", function(){
   getPosts();
 }); 
+document.querySelector('.card-body').addEventListener("click", cancelEdit)
 ui.postBtn.addEventListener('click', submitPost);
 ui.posts.addEventListener('click', deletePost);
 ui.posts.addEventListener('click', enableEdit);
 
-
+function cancelEdit(e){
+  if(e.target.classList.contains('post-cancel')){
+    ui.changeFormState('add');
+  }
+}
 function getPosts() {
   
   http.get('http://localhost:3000/posts')
@@ -50,12 +55,16 @@ function submitPost(e){
         }).catch(err => console.log(err));
     
       } else{
-        console.log('fail');
-        
+          http.put(`http://localhost:3000/posts/${id}`, data).then(data => {
+            ui.changeFormState('add');
+            ui.showAlert('Post Updated', 'alert alert-success');
+            getPosts();
+          }).catch(err => console.log(err));
+          
       }
     
     }
-  
+
   
 }
 
